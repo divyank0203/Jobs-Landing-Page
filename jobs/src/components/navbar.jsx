@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../assets/images/reactlogo.png'
 
 function Navbar() {
   return (
@@ -12,9 +13,9 @@ function Navbar() {
             {/* <!-- Logo --> */}
             <a className="flex flex-shrink-0 items-center mr-4" href="/index.html">
               <img
-                className="h-10 w-auto"
-                src="images/logo.png"
-                alt="React Jobs"
+                className="h-10 w-auto rounded-full"
+                src={logo}
+                
               />
               <span className="hidden md:block text-white text-2xl font-bold ml-2"
                 >React Jobs</span
