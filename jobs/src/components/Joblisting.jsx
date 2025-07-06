@@ -1,6 +1,17 @@
 import React from 'react'
+import jobs from '../jobs.json'
+import { useState } from 'react'
+import { fa } from 'react-icons/fa'
 
 function Joblisting({job}) {
+const [setdescription, showfulldescription] = useState(false);
+
+let description = job.description;
+
+if(!setdescription){
+  description=description.substring(0, 85) + "..." ;
+}
+
   return (
         <div id='job.id' className="bg-white rounded-xl shadow-md relative">
             <div className="p-4">
@@ -10,8 +21,13 @@ function Joblisting({job}) {
               </div>
 
               <div className="mb-5"> 
-               { job.description }
+               { description }
+                
               </div>
+              <button onClick={() => showfulldescription((prevstate) => !prevstate)} className='text-indigo-800 mb-5 hover:text-indigo-500'>
+                  { setdescription ? "Show Less" : "Show More" }
+                </button>
+             
 
               <h3 className="text-indigo-500 mb-2">{ job.salary }</h3>
 

@@ -4,7 +4,7 @@ import Joblisting from './Joblisting';
 
 function Jobcards() {
     console.log(jobs);
-
+  const recentjobs = jobs.slice(0, 3);
   return (
 
     <div>
@@ -14,7 +14,7 @@ function Jobcards() {
           Browse Jobs
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {jobs.map((job) =>(
+          {recentjobs.map((job) =>(
                 <Joblisting key={job.id} job={job} />
           ))}
 
