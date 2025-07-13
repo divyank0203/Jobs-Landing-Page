@@ -3,6 +3,7 @@ import jobs from '../jobs.json'
 import { useState } from 'react'
 import {FaMapMarker } from 'react-icons/fa'
 
+
 function Joblisting({job}) {
 const [setdescription, showfulldescription] = useState(false);
 
