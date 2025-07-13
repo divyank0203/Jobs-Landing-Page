@@ -5,14 +5,17 @@ import { Route,
     RouterProvider,
     } from 'react-router-dom';
 import Navbar from './components/navbar'
-
+import Notfoundpage from './pages/notfoundpage';
 import Mainlayout from './layouts/Mainlayout';
 import Homepage from './pages/Homepage'
+import Jobspage from './pages/Jobspage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
   <Route path='/' element={<Mainlayout/>}>
   <Route index element = { <Homepage/> } />
+  <Route path='/jobs' element = { <Jobspage/> } />
+  <Route path='*' element = { <Notfoundpage/> } />
   </Route>
   )
 )
