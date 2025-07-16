@@ -2,9 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import jobs from '../jobs.json'
 import Joblisting from './Joblisting';
+import Spinner from './Spinner';
 
 function Jobcards() {
- 
   const [jobs, setJobs] = useState([]);
   const [loading, setloading] = useState(true);
   useEffect(() => {
@@ -31,9 +31,16 @@ function Jobcards() {
           Browse Jobs
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {jobs.map((job) =>(
+          {loading ? (
+            <Spinner />
+          ):(
+            <>
+            {jobs.map((job) =>(
                 <Joblisting key={job.id} job={job} />
           ))}
+            </>
+          )}
+          
 
 
         </div>
