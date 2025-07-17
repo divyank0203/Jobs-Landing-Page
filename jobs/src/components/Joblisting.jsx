@@ -2,6 +2,7 @@ import React from 'react'
 import jobs from '../jobs.json'
 import { useState } from 'react'
 import {FaMapMarker } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
 
 
 function Joblisting({job}) {
@@ -10,7 +11,7 @@ const [setdescription, showfulldescription] = useState(false);
 let description = job.description;
 
 if(!setdescription){
-  description=description.substring(0, 85) + "..." ;
+  description=description.substring(0, 90) + "..." ;
 }
 
   return (
@@ -39,12 +40,12 @@ if(!setdescription){
                   <FaMapMarker className='inline text-lg mb-1 mr-1'/>
                  { job.location }
                 </div>
-                <a
-                  href={`/job/${job.id}`}
+                <NavLink
+                  to={`/job/${job.id}`}
                   className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
                 >
                  Read More
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

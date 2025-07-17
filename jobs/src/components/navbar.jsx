@@ -34,8 +34,8 @@ function Navbar() {
                 <NavLink
                   to="/jobs"
                    className={linkclass}
-                  >Jobs</NavLink
-                >
+                  >Jobs</NavLink>
+                
                 <NavLink
                   to="/add-job"
                   className={linkclass}

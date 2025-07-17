@@ -9,8 +9,10 @@ function Jobcards() {
   const [loading, setloading] = useState(true);
   useEffect(() => {
     const fetchJobs = async () => {
+      
+
       try {
-      const res = await fetch('http://localhost:8000/jobs');
+      const res = await fetch('/api/jobs?_limit=3');
       const data = await res.json();
       setJobs(data);
     } catch(error){
